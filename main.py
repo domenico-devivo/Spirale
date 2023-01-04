@@ -10,7 +10,7 @@ Generatore di strade:
     2) strade_unite=[S1+S2, S1+S3, S2+S1, S2+S3, S3+S1, S3+S2]
    
 '''
-
+#QUESTO commento è nuovo
 
 
 class Roadtition(RoadtitionBase):  # Roadtition() l'unione tra road e competition proprio quello che fa la classe
