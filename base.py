@@ -77,7 +77,6 @@ class RoadtitionBase():
                 print("Popolazione iniziale +1 :", strade_da_unire)
 
             i = i + 1
-            # sleep(0.5)
 
         return strade_da_unire
 

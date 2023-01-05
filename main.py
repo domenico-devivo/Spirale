@@ -39,5 +39,4 @@ python competition.py
 --module-path C:/Users/Dexter/Desktop/CompetiMio 
 --module-name main 
 --class-name Roadtition
-
 '''
