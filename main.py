@@ -2,7 +2,7 @@ from base import RoadtitionBase
 
 '''
 Generatore di strade:
-    1)Genero la popolazione iniziale, vista come insieme di archi di ellissi
+    1)Genero la popolazione iniziale, vista come insieme di archi di spirali
     2)Genero la prole ,unendo gli archi con il prodotto cartesiano tra l'insieme inziale con se stesso ( escludendo indici uguali )
     
     Es: 
@@ -10,7 +10,6 @@ Generatore di strade:
     2) strade_unite=[S1+S2, S1+S3, S2+S1, S2+S3, S3+S1, S3+S2]
    
 '''
-#QUESTO commento è nuovo
 
 
 class Roadtition(RoadtitionBase):  # Roadtition() l'unione tra road e competition proprio quello che fa la classe
@@ -21,7 +20,7 @@ class Roadtition(RoadtitionBase):  # Roadtition() l'unione tra road e competitio
         #Metodo chiamato da competition.py al fine di generare i test
 
         strade_da_unire = self.initial_population_generator(choice=True, i_value=3,
-                                                            time_spent=1 / 12)  # genero la popolazione iniziale
+                                                            time_spent=1 / 4)  # genero la popolazione iniziale
 
         self.hebi_generator(strade_da_unire)  # incrocio le strade della popolazione iniziale per generarne di nuove
 

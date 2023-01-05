@@ -61,12 +61,12 @@ class RoadtitionBase():
             print("Condizione:", self.executor.time_budget.time_budget * (1 - time_spent))
 
             if (i % 2 == 0): #se i è pari allora genero un arco di ellisse in senso antiorario Sx <--
-                road_points = self.bow(c_x0=randint(60, 100), c_y0=randint(60, 100), radius=randint(40, 70),
+                road_points = self.bow(c_x0=randint(60, 120), c_y0=randint(60, 100), radius=randint(40, 70),
                                        interpolation_points=randint(4, 5), Angle_init=randint(290, 360),
                                        Angle_final=randint(180, 250))
 
             else: # se i è dispari allora genero un arco di ellisse in senso orario --> Dx
-                road_points = self.bow(c_x0=randint(60, 100), c_y0=randint(60, 100), radius=randint(40, 70),
+                road_points = self.bow(c_x0=randint(60, 120), c_y0=randint(60, 100), radius=randint(40, 70),
                                        interpolation_points=randint(4, 6), Angle_init=randint(0, 70),
                                        Angle_final=randint(110, 180))
 
