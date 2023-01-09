@@ -10,7 +10,6 @@ Generatore di strade:
     2) strade_unite=[S1+S2, S1+S3, S2+S1, S2+S3, S3+S1, S3+S2]
 '''
 
-
 class Roadtition(RoadtitionBase):
     def __init__(self, executor=None, map_size=None):
         super().__init__(executor=executor, map_size=map_size)

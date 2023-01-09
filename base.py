@@ -4,7 +4,6 @@ from random import randint, random
 from code_pipeline.tests_generation import RoadTestFactory
 from code_pipeline.visualization import RoadTestVisualizer
 
-
 class RoadtitionBase():
     def __init__(self, executor=None, map_size=None):
         self.executor = executor  # attributo che definisce il tipo di esecutore
