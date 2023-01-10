@@ -15,4 +15,6 @@ The program use a genetic approach which generate sets of roads modeled as arcs 
 - Minimize the invalid tests. This is done framed, define a intervall of values in which specify the inizial end the final points, and build bow that non intersect
 - Maximize the tests that outcome as "Fail". Discarding the test that are falg as "Error", and crossed randomically the roads
 
-### 
+### How it works?
+
+![A single road]([my-image.jpg](https://user-images.githubusercontent.com/108838837/211591654-c62199c8-abfb-4670-a79e-a2e403217710.png))
