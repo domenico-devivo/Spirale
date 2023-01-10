@@ -31,5 +31,9 @@ The _competition.py_ expects to find the start() method that must be implemented
 
 ![A single crossover](https://user-images.githubusercontent.com/108838837/211593200-c45bdaf3-5112-4f08-98e7-a58d4e1c5206.png)
 
-3) For every valid road the competition.py calls also some mathods for validate the road. At the end of the time_budget the result of the program is a 
+3) At the end there is a table summurized with the informations about the test just performed
+
 ![A result](https://user-images.githubusercontent.com/108838837/211600193-dad3c582-94fa-478a-a4f1-b460c5ddb0ca.png)
+
+### What improvements can we make?
+We can generate, from the offspring population, other heir populations by implementing a fitness function that attempts to improve them until no further improvements are made.
