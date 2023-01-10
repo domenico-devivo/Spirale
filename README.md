@@ -1,6 +1,6 @@
 # Spirale at Cyber-Physical Systems Testing Competition
 
-Spirale is a program made for participate at [SBST](https://sbst21.github.io/tools/) competition.
+**_Spirale_** is a program made for participate at [SBST](https://sbst21.github.io/tools/) competition.
 
 In particular in the branch of CPS testing competition, based on the generation of random roads as input in a self-driving cars simulation environment.
 
@@ -20,6 +20,9 @@ The run of Spirale depends on the pipeline of the [CPS too competition](https://
 The minimum number of input values to start it are:
 > python competition.py --time-budget 180 --executor mock --map-size 200 --module-path ../Spirale --module-name main --class-name Roadtition
 
+The _competition.py_ expects to find the start method that must be implemented in the Roadtition class ( placed in the _main_ module )
+
+1)
 
 ![A single road](https://user-images.githubusercontent.com/108838837/211591654-c62199c8-abfb-4670-a79e-a2e403217710.png)
 
