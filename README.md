@@ -16,6 +16,10 @@ The program use a genetic approach which generate sets of roads modeled as arcs 
 - Maximize the tests that outcome as "Fail". Discarding the test that are falg as "Error", and crossed randomically the roads
 
 ### How it works?
+The run of Spirale depends on the pipeline of the [CPS too competition](https://github.com/sbft-cps-tool-competition/cps-tool-competition).
+The minimum number of input values to start it are:
+> python competition.py --time-budget 180 --executor mock --map-size 200 --module-path ../Spirale --module-name main --class-name Roadtition
+
 
 ![A single road](https://user-images.githubusercontent.com/108838837/211591654-c62199c8-abfb-4670-a79e-a2e403217710.png)
 
