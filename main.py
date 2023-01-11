@@ -1,13 +1,13 @@
 from base import RoadtitionBase
 
 '''
-Generatore di strade:
-    1)Genero la popolazione iniziale, vista come insieme di archi di spirali
-    2)Genero la popolazione erede ,unendo gli archi con il prodotto cartesiano tra l'insieme inziale con se stesso ( escludendo indici uguali )
+Road generator:
+    1)I generate the initial population, seen as a set of spiral arcs
+    2)I generate the heir population ,joining the arcs with the Cartesian product between the inital set with itself ( excluding equal indices )
     
-    Es: 
-    1) strade_valide=[S1, S2, S3]
-    2) strade_unite=[S1+S2, S1+S3, S2+S1, S2+S3, S3+S1, S3+S2]
+    i.e: 
+    1) initial population=[S1, S2, S3]
+    2) heir population=[S1+S2, S1+S3, S2+S1, S2+S3, S3+S1, S3+S2]
 '''
 
 class Roadtition(RoadtitionBase):
