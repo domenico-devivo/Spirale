@@ -230,7 +230,7 @@ class RoadtitionBase():
 
 
 
-    def fitness_function(self,heir_population , fitness_parent, oob):
+    def fitness_generator(self,heir_population , fitness_parent, oob):
 
         v = True
         while fitness_parent >= 0 and v:
