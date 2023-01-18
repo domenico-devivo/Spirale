@@ -1,39 +1,42 @@
 # Spirale at Cyber-Physical Systems Testing Competition
 
-**_Spirale_** is a program made for participate at [SBST](https://sbst21.github.io/tools/) competition.
+**_Spirale_** is a software project made for participating in the Cyber-physical systems (CPS) testing competition at the 16th Intl. Workshop on Search-Based and Fuzz Testing [SBST](https://sbst21.github.io/tools/).
 
-In particular in the branch of CPS testing competition, based on the generation of random roads as input in a self-driving cars simulation environment.
+Spirale is a test generator that produces virtual roads to test a lane keeping assist system. The aim of the generation is to produce diverse failure-inducing tests, i.e., roads that make the lane keeping assist system drive out of the lane. based on the generation of random roads as input in a self-driving cars simulation environment.
 
 ### What is the structure of Spirale?
 
-The program use a genetic approach which generate sets of roads modeled as arcs of spirals.
-- Initially generating a random starting population of roads
-- Subsequently this inizial population is crossed with itself for generate a set of offsping roads
+Spirale uses a genetic approach to generate roads modeled as a combination of arcs of spiral. 
+- Initially, it generates a random starting population of roads.
+- Iteratively, the inizial population is crossed with itself to generate a new set of heir roads
+- and a fitness function is used to select an optimized subset of generated roads, on the basis of the test execution results. 
 
 ### What are the goals ?
-
-- Minimize the invalid tests. This is done framed, define a intervall of values in which specify the inizial end the final points, and build bow that non intersect.
-- Maximize the tests that outcome as "Fail". Discarding the test that are falg as "Error", and crossed randomically the roads.
+- Minimize the invalid tests. 
+- Maximize the tests that outcome as "Fail". 
 
 ### How it works?
 The run of Spirale depends on the pipeline of the [CPS too competition](https://github.com/sbft-cps-tool-competition/cps-tool-competition).
-The minimum number of input values to start it are:
+
+Spirale can be launched by the following command line: 
+
 > python competition.py --time-budget 180 --executor mock --map-size 200 --module-path ../Spirale --module-name main --class-name Roadtition
 
-The _competition.py_ expects to find the start() method that must be implemented in the Roadtition class ( placed in the _main_ module ).
+The _competition.py_ module expects to find the start() method that must be implemented in the Roadtition class (placed in the _main_ module).
 
-1) The first method called inside start() is initial_population_generator() , in which the roads are created whose curvatures are derived from spiral arcs.
- In the below image there is an example of tested valid road of initial population:
+1) The first method called by start() is initial_population_generator() , in which roads having curvatures derived from spiral arcs are created.
+ In the below image there is an example of  valid road belonging to the initial population:
 
 ![A single road](https://user-images.githubusercontent.com/108838837/211591654-c62199c8-abfb-4670-a79e-a2e403217710.png)
 
-2)The second method called inside start() is hebi_generator(initial_population_of_roads) in which takes place the crossover between two different roads of the initial population. Hebi means snake in japanee like the new road in the image:
+2) The second method called by start() is hebi_generator(initial_population_of_roads) in which the crossover between two different roads of the initial population takes place. Hebi means snake in japanee like the new road in the image:
 
 ![A single crossover](https://user-images.githubusercontent.com/108838837/211593200-c45bdaf3-5112-4f08-98e7-a58d4e1c5206.png)
 
-3) At the end there is a table summurized with the informations about the test just performed
+3) Iteratively, the generated roads are provided in input to the simulation environment  and the test execution results are used to evaluate the fitness function and select the new heir population. 
+   
+4) The output of the execution will be a table reporting summary information about the test executions.
 
 ![A result](https://user-images.githubusercontent.com/108838837/211600193-dad3c582-94fa-478a-a4f1-b460c5ddb0ca.png)
 
-### What improvements can we make?
-We can generate, from the offspring population, other heir populations by implementing a fitness function that attempts to improve them until no further improvements are made.
+
