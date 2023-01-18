@@ -229,7 +229,6 @@ class RoadtitionBase():
         return x, y
 
 
-
     def fitness_generator(self,heir_population , fitness_parent, oob):
 
         v = True
