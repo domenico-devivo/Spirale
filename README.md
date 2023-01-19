@@ -29,13 +29,15 @@ The _competition.py_ module expects to find the start() method that must be impl
 
 ![A single road](https://user-images.githubusercontent.com/108838837/211591654-c62199c8-abfb-4670-a79e-a2e403217710.png)
 
-2) The second method called by start() is hebi_generator(initial_population_of_roads) in which the crossover between two different roads of the initial population takes place. Hebi means snake in japanee like the new road in the image:
+2) The second method called by start() is hebi_generator(initial_population_of_roads) in which the crossover between two different roads of the initial population takes place.Then a fitness value is associated to every single road and to the enterely heir population as quantifiers. Hebi means snake in japanee like the new road in the image:
 
 ![A single crossover](https://user-images.githubusercontent.com/108838837/211593200-c45bdaf3-5112-4f08-98e7-a58d4e1c5206.png)
 
-3) Iteratively, the generated roads are provided in input to the simulation environment  and the test execution results are used to evaluate the fitness function and select the new heir population. 
+3) The thrid method called is fitness_generator(heir_population) in which a subset of the heir road are selected by the fitness valued of the roads. In this derived new population there are only some roads that have the minus fitness value associated. Iteratively is done until a condition on the fitness new heir population is True.
+
+4) If the time budget is not over and the fitness_generator(heir_population) cannot improve that specific heir population, a new initial population in made re-calling the initial_start_population_generator() repeat the loop from the first point.
    
-4) The output of the execution will be a table reporting summary information about the test executions.
+5) The output of the execution will be a table reporting summary information about the test executions.
 
 ![A result](https://user-images.githubusercontent.com/108838837/211600193-dad3c582-94fa-478a-a4f1-b460c5ddb0ca.png)
 
