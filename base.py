@@ -231,7 +231,7 @@ class RoadtitionBase():
         while fitness_parent >= 0 and v:
 
             if len(heir_population) > 4:
-                new_population , new_fitness = self.fitness_of_one_population(heir_population, oob , 5) #mi estrapolo solo le 5 strade che hanno fitness più basse, se ci sono!
+                new_population , new_fitness = self.fitness_of_one_population(heir_population, oob , 5) # estrapolo solo le 5 strade che hanno fitness più basse, se ci sono!
                 #print("\nla nuova popolazione con oob minimo è:" , new_population," ed ha come funzione fitness:\033[1;31m",new_fitness,"\033[1;30m")
 
                 new_heir_population , oob=self.hebi_generator(new_population) #le incrocio
