@@ -1,5 +1,6 @@
 from base import RoadtitionBase
 
+
 class Roadtition(RoadtitionBase):
     def __init__(self, executor=None, map_size=None):
         self.executor=executor
