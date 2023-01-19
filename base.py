@@ -22,7 +22,7 @@ class RoadtitionBase():
         test = RoadTestFactory.create_road_test(road_points)
         # With execute_tes you test the previously created road
         test_outcome, description, execution_data = self.executor.execute_test(test)
-        print("\033[1;34m test_outcome= \033[1;31m", test_outcome, "\033[1;30m")
+        #print("\033[1;34m test_outcome= \033[1;31m", test_outcome, "\033[1;30m")
         #print("\033[1;34m execution_data.oob= \033[1;31m", execution_data[0].oob_distance, "\033[1;30m")
         #self.visualize.visualize_road_test(test)
 
@@ -57,10 +57,6 @@ class RoadtitionBase():
 
             if test_outcome != "ERROR" and test_outcome != "INVALID":
                 road_population .append(road_point_refremed)
-                if test_outcome != "INVALID":
-                    print("\033[1;34m execution_data.oob= \033[1;31m", execution_data[0].oob_distance, "\033[1;30m")
-                    #IN BASE AL oob crea un vettore anche on gli oob a valore minore in execution_data e poi la funzione fittin la
-                    #fai andando a prendere il valore più piccolo della somma delle prime 5 tipo
 
             i = i + 1
 
@@ -84,7 +80,7 @@ class RoadtitionBase():
                     if test_outcome != "ERROR" and test_outcome != "INVALID" :
                         heir_population.append( new_road_point )
                         oob.append(execution_data[0].oob_distance)
-                        print("\033[1;34m execution_data.oob= \033[1;31m", execution_data[0].oob_distance,"\033[1;30m")
+                        #print("\033[1;34m execution_data.oob= \033[1;31m", execution_data[0].oob_distance,"\033[1;30m")
         return heir_population ,oob
 
     def bow(self, c_x0, c_y0, radius, interpolation_points, Angle_init, Angle_final):
