@@ -8,7 +8,7 @@ class RoadtitionBase():
     def __init__(self, executor=None, map_size=None):
         self.executor = executor  # attribute that defines the type of executor
         self.map_size = map_size  # attribute specifying the square size of the map
-        #self.visualize = RoadTestVisualizer(self.map_size)  # To display the roads on the screen
+        self.visualize = RoadTestVisualizer(self.map_size)  # To display the roads on the screen
 
     def execute_test(self, road_points):
         '''
@@ -22,9 +22,9 @@ class RoadtitionBase():
         test = RoadTestFactory.create_road_test(road_points)
         # With execute_tes you test the previously created road
         test_outcome, description, execution_data = self.executor.execute_test(test)
-        #print("\033[1;34m test_outcome= \033[1;31m", test_outcome, "\033[1;30m")
+        print("\033[1;34m test_outcome= \033[1;31m", test_outcome, "\033[1;30m")
         #print("\033[1;34m execution_data.oob= \033[1;31m", execution_data[0].oob_distance, "\033[1;30m")
-        #self.visualize.visualize_road_test(test)
+        self.visualize.visualize_road_test(test)
 
         return test_outcome , execution_data
 
@@ -80,7 +80,7 @@ class RoadtitionBase():
                     if test_outcome != "ERROR" and test_outcome != "INVALID" :
                         heir_population.append( new_road_point )
                         oob.append(execution_data[0].oob_distance)
-                        #print("\033[1;34m execution_data.oob= \033[1;31m", execution_data[0].oob_distance,"\033[1;30m")
+                        print("\033[1;34m execution_data.oob= \033[1;31m", execution_data[0].oob_distance,"\033[1;30m")
         return heir_population ,oob
 
     def bow(self, c_x0, c_y0, radius, interpolation_points, Angle_init, Angle_final):
@@ -231,7 +231,7 @@ class RoadtitionBase():
         while fitness_parent >= 0 and v:
 
             if len(heir_population) > 4:
-                new_population , new_fitness = self.fitness_of_one_population(heir_population, oob , 5) # estrapolo solo le 5 strade che hanno fitness più basse, se ci sono!
+                new_population , new_fitness = self.fitness_of_one_population(heir_population, oob , 5) #mi estrapolo solo le 5 strade che hanno fitness più basse, se ci sono!
                 #print("\nla nuova popolazione con oob minimo è:" , new_population," ed ha come funzione fitness:\033[1;31m",new_fitness,"\033[1;30m")
 
                 new_heir_population , oob=self.hebi_generator(new_population) #le incrocio
